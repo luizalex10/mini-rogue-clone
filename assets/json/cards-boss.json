@@ -6,8 +6,8 @@
     "type": "boss",
     "description": "Cuidado, o chefe!",
     "damage": 3,
-    "min-hp": 8,
-    "max-hp": 9
+    "min-hp": 10,
+    "max-hp": 15
   },
   {
     "code": 2,
@@ -16,7 +16,7 @@
     "type": "boss",
     "description": "Cuidado, o chefe!",
     "damage": 4,
-    "min-hp": 9,
-    "max-hp": 10
+    "min-hp": 11,
+    "max-hp": 16
   }
 ]
