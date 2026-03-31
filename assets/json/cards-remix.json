@@ -5,9 +5,9 @@
     "filename": "skeleton.png",
     "type": "monster",
     "description": "Cuidado!",
-    "damage": 1,
-    "min-hp": 3,
-    "max-hp": 4,
+    "damage": 2,
+    "min-hp": 4,
+    "max-hp": 6,
     "exp-reward": 2,
     "coin-reward": 2
   },
@@ -29,9 +29,9 @@
     "filename": "wolf.png",
     "type": "monster",
     "description": "Cuidado!",
-    "damage": 2,
-    "min-hp": 4,
-    "max-hp": 5,
+    "damage": 3,
+    "min-hp": 5,
+    "max-hp": 7,
     "exp-reward": 3,
     "coin-reward": 0
   },
@@ -43,7 +43,7 @@
     "description": "Cuidado!",
     "damage": 2,
     "min-hp": 4,
-    "max-hp": 6,
+    "max-hp": 8,
     "exp-reward": 4,
     "coin-reward": 1
   },
@@ -113,19 +113,19 @@
     "description": "Cuidado!",
     "damage": 1,
     "min-hp": 3,
-    "max-hp": 4,
+    "max-hp": 5,
     "exp-reward": 2,
     "coin-reward": 2
   },
   {
     "code": 14,
-    "title": "Morcego",
+    "title": "Morcegos",
     "filename": "bat.png",
     "type": "monster",
     "description": "Cuidado!",
     "damage": 1,
-    "min-hp": 2,
-    "max-hp": 4,
+    "min-hp": 5,
+    "max-hp": 10,
     "exp-reward": 1,
     "coin-reward": 0
   }
