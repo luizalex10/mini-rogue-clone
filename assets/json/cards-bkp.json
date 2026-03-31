@@ -1,77 +1,108 @@
 [
   {
     "code": 1,
-    "title": "Criatura 1",
-    "filename": "medieval-house.png",
+    "title": "Esqueleto",
+    "filename": "skeleton.png",
     "type": "monster",
     "description": "Cuidado!",
-    "damage": 1
+    "damage": 1,
+    "min-hp": 3,
+    "max-hp": 4,
+    "exp-reward": 2,
+    "coin-reward": 2
   },
   {
     "code": 2,
-    "title": "Criatura 2",
-    "filename": "medieval-house.png",
+    "title": "Morcego",
+    "filename": "bat.png",
     "type": "monster",
     "description": "Cuidado!",
-    "damage": 2
+    "damage": 1,
+    "min-hp": 2,
+    "max-hp": 4,
+    "exp-reward": 1,
+    "coin-reward": 0
   },
   {
     "code": 3,
-    "title": "Criatura 3",
-    "filename": "medieval-house.png",
+    "title": "Lobo",
+    "filename": "wolf.png",
     "type": "monster",
     "description": "Cuidado!",
-    "damage": 2
+    "damage": 2,
+    "min-hp": 4,
+    "max-hp": 5,
+    "exp-reward": 3,
+    "coin-reward": 0
   },
   {
     "code": 4,
-    "title": "Tesouro 1",
-    "filename": "money-bag.png",
-    "type": "treasure",
-    "description": "Será que há ouro?"
+    "title": "Assombração",
+    "filename": "spirit.png",
+    "type": "monster",
+    "description": "Cuidado!",
+    "damage": 2,
+    "min-hp": 4,
+    "max-hp": 6,
+    "exp-reward": 4,
+    "coin-reward": 1
   },
   {
     "code": 5,
-    "title": "Tesouro 2",
-    "filename": "money-bag.png",
+    "title": "Tesouro",
+    "filename": "treasure.png",
     "type": "treasure",
     "description": "Será que há ouro?"
   },
   {
     "code": 6,
-    "title": "Oportunidades 1",
-    "filename": "old-map.png",
+    "title": "Tesouro",
+    "filename": "treasure.png",
+    "type": "treasure",
+    "description": "Será que há ouro?"
+  },
+  {
+    "code": 7,
+    "title": "Oportunidades",
+    "filename": "wooden-mug.png",
     "type": "food",
     "description": "Aproveite, se puder."
   },
   {
-    "code": 7,
-    "title": "Melhoria de Arma 1",
-    "filename": "stained-glass-window.png",
-    "type": "weapon",
-    "description": "Chance de melhoria."
-  },
-  {
     "code": 8,
-    "title": "Melhoria de Arma 2",
-    "filename": "stained-glass-window.png",
+    "title": "Ferreiro",
+    "filename": "power-up.png",
     "type": "weapon",
     "description": "Chance de melhoria."
   },
   {
     "code": 9,
-    "title": "Armadilha 1",
-    "filename": "wall.png",
+    "title": "Forja",
+    "filename": "anvil.png",
+    "type": "weapon",
+    "description": "Chance de melhoria."
+  },
+  {
+    "code": 10,
+    "title": "Espinhos!",
+    "filename": "trap.png",
     "type": "trap",
     "description": "Armadilha!",
     "exp-to-pay": 3
   },
   {
-    "code": 10,
-    "title": "Armadilha 2",
-    "filename": "wall.png",
+    "code": 11,
+    "title": "Armadilha!",
+    "filename": "trap-1.png",
     "type": "trap",
     "description": "Armadilha!",
     "exp-to-pay": 4
+  },
+  {
+    "code": 12,
+    "title": "Templo",
+    "filename": "shrine-1.png",
+    "type": "shrine",
+    "description": "Ultima!"
   }
 ]
