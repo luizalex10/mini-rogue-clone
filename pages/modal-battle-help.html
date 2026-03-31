@@ -1,0 +1,25 @@
+<div class="modal fade" id="modalBattleHelp" tabindex="-1"
+     aria-labelledby="modalBattleHelpLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalBattleHelpLabel">⚔️ Como funciona a batalha?</h5>
+            </div>
+            <div class="modal-body">
+                <p><strong>Teste de habilidade:</strong> role 1d6. Resultado ≥ 4 = sucesso.</p>
+                <ul class="mb-2">
+                    <li><strong>Atacar:</strong> teste de habilidade. Sucesso → causa dano ao inimigo. Falha → sem dano (pode re-rolar se tiver re-rolagens).</li>
+                    <li><strong>Re-rolar:</strong> disponível apenas em caso de falha. Refaz somente o seu dado, não o do inimigo.</li>
+                    <li><strong>Fugir</strong> (apenas monstros): teste de habilidade (≥ 5). Sucesso → escapa e avança. Falha → opção removida.</li>
+                    <li><strong>Usar habilidade:</strong> uso único por partida. Ative antes de atacar.</li>
+                </ul>
+                <p class="mb-1"><strong>O inimigo também ataca:</strong> a cada turno, ele realiza um teste de habilidade (≥ 4). Sucesso → causa dano a você.</p>
+                <p class="mb-1"><strong>Escudo 🛡️:</strong> pontos de escudo absorvem dano antes do HP. Cada ponto bloqueia 1 de dano e é perdido permanentemente — não se recupera entre salas.</p>
+                <p class="mb-0 text-muted small">Os danos só são aplicados ao confirmar clicando em <strong>Ok</strong>.</p>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Entendido</button>
+            </div>
+        </div>
+    </div>
+</div>

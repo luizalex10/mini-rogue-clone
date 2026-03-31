@@ -1,0 +1,23 @@
+.card-actions {
+    min-width: 400px;
+    max-width: 400px;
+}
+
+.card-actions .card-header,
+.card-actions .card-body {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.card-actions .card-header.visible,
+.card-actions .card-body.visible {
+    opacity: 1;
+}
+
+.battle-log {
+    height: 180px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    word-break: break-word;
+    font-size: 0.85rem;
+}

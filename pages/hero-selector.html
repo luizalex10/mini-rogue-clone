@@ -1,0 +1,40 @@
+<div class="d-flex flex-column align-items-center gap-4 py-4 w-100" style="max-width:480px;margin:0 auto">
+
+    <div id="hero-carousel" class="carousel slide w-100">
+        <div class="carousel-inner" id="hero-carousel-inner">
+            <!-- Preenchido via JS -->
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon bg-primary rounded"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon bg-primary rounded"></span>
+        </button>
+    </div>
+
+    <div class="w-100 d-flex flex-column gap-3">
+        <fieldset class="border rounded p-3">
+            <legend class="float-none w-auto px-2 fs-6 fw-semibold">Ataque</legend>
+            <p class="mb-0">⚔️ <span id="hero-min-atk">—</span> – <span id="hero-max-atk">—</span> de dano por acerto</p>
+        </fieldset>
+        <fieldset class="border rounded p-3">
+            <legend class="float-none w-auto px-2 fs-6 fw-semibold">Vida inicial</legend>
+            <p class="mb-0">❤️ <span id="hero-initial-hp">—</span> pontos de vida</p>
+        </fieldset>
+        <fieldset class="border rounded p-3">
+            <legend class="float-none w-auto px-2 fs-6 fw-semibold">Lenda</legend>
+            <p id="hero-description" class="mb-0 text-muted fst-italic"></p>
+        </fieldset>
+        <fieldset class="border rounded p-3">
+            <legend class="float-none w-auto px-2 fs-6 fw-semibold">Passiva</legend>
+            <p id="hero-passive-description" class="mb-0"></p>
+        </fieldset>
+        <fieldset class="border rounded p-3">
+            <legend class="float-none w-auto px-2 fs-6 fw-semibold">Habilidade de Batalha</legend>
+            <p id="hero-ability-description" class="mb-0"></p>
+        </fieldset>
+    </div>
+
+    <button id="btn-select-hero" class="btn btn-primary btn-lg">Selecionar Herói</button>
+
+</div>

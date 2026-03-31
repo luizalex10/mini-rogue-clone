@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+        <title>Mini Rogue</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+        <script src="assets/js/theme-toggle.js?v=2"></script>
+        <script src="assets/js/session.js?v=2"></script>
+    </head>
+    <body class="d-flex flex-column min-vh-100">
+
+        <div id="header-placeholder"></div>
+        <main class="d-flex flex-grow-1 justify-content-center align-items-center">
+            <div class="d-flex flex-column align-items-center gap-3" style="max-width:420px;width:100%;padding:1rem">
+                <fieldset class="border rounded p-3 w-100">
+                    <legend class="float-none w-auto px-2 fw-semibold">Mini Rogue Clone</legend>
+                    <div style="max-height:220px;overflow-y:auto" class="d-flex flex-column gap-2 text-muted small">
+                        <p class="mb-0">🏆 <strong>Objetivo:</strong> avance sala por sala até chegar à última e derrotar o grande chefão. Sobreviver não é garantido.</p>
+                        <p class="mb-0">⚔️ <strong>Escolha seu herói:</strong> cada um possui uma habilidade passiva e uma de combate únicas. Experimente todos e descubra qual se encaixa melhor no seu estilo de jogo.</p>
+                        <p class="mb-0">📈 <strong>Evolua:</strong> derrote criaturas, supere armadilhas e acumule Experiência e moedas. Use-os para obter escudos, melhorar seu dano ou garantir mais chances de re-rolagem.</p>
+                        <p class="mb-0">✨ <strong>Bônus de vida:</strong> ao acumular 5 pontos de Experiência, você ganha +2 pontos de vida permanentes — independente do que aconteça depois.</p>
+                        <p class="mb-0">🛡️ <strong>Escudo:</strong> pontos de escudo absorvem dano antes do HP. São perdidos permanentemente ao receber dano — não se recuperam entre salas.</p>
+                        <p class="mb-0">🎲 <strong>Teste de habilidade:</strong> role 1d6. Resultado ≥ 4 é sucesso em combate. Fuga exige ≥ 5. Em caso de falha, você pode re-rolar se tiver re-rolagens disponíveis.</p>
+                        <p class="mb-0">❤️ <strong>Regeneração:</strong> você restaura 1 ponto de vida ao entrar em cada nova sala.</p>
+                        <hr class="my-1">
+                        <p class="mb-0">🎮 <strong>Modo Normal:</strong> avance pelas salas na ordem em que foram embaralhadas, sem escolhas — apenas sobreviva.</p>
+                        <p class="mb-0">🔀 <strong>Modo Remix:</strong> após a primeira sala, escolha entre duas opções a cada avanço. A sala não escolhida é descartada. Mais controle, mais estratégia.</p>
+                    </div>
+                </fieldset>
+                <button id="btn-play" class="btn btn-primary btn-lg w-100">Jogar</button>
+                <button id="btn-play-remix" class="btn btn-outline-warning btn-lg w-100">🔀 Jogar modo Remix</button>
+            </div>
+        </main>
+
+        <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('pages/header-minimal.html')
+                .then(r => r.text())
+                .then(html => {
+                    document.getElementById('header-placeholder').innerHTML = html;
+                    ThemeToggle.initButton();
+                });
+
+            document.getElementById('btn-play').addEventListener('click', () => {
+                sessionStorage.removeItem('pending-game-mode');
+                if (Session.isActive()) {
+                    window.location.href = 'game.html';
+                } else {
+                    sessionStorage.setItem('pending-game-mode', 'normal');
+                    window.location.href = 'heroes.html';
+                }
+            });
+
+            document.getElementById('btn-play-remix').addEventListener('click', () => {
+                if (Session.isActive()) {
+                    window.location.href = 'game.html';
+                } else {
+                    sessionStorage.setItem('pending-game-mode', 'remix');
+                    window.location.href = 'heroes.html';
+                }
+            });
+        });
+        </script>
+    </body>
+</html>

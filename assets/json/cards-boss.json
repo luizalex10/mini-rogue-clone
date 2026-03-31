@@ -1,0 +1,22 @@
+[
+  {
+    "code": 1,
+    "title": "[Chefe] Cavaleiro",
+    "filename": "knight.png",
+    "type": "boss",
+    "description": "Cuidado, o chefe!",
+    "damage": 3,
+    "min-hp": 8,
+    "max-hp": 9
+  },
+  {
+    "code": 2,
+    "title": "[Chefe] A Morte",
+    "filename": "grim-reaper.png",
+    "type": "boss",
+    "description": "Cuidado, o chefe!",
+    "damage": 4,
+    "min-hp": 9,
+    "max-hp": 10
+  }
+]

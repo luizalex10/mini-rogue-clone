@@ -1,0 +1,8 @@
+#card-options-placeholder {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+#card-options-placeholder.visible {
+    opacity: 1;
+}

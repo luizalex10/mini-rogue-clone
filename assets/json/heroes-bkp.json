@@ -1,0 +1,46 @@
+[
+  {
+    "code": 1,
+    "name": "Aventureiro",
+    "filename": "adventurer.png",
+    "type": "adventurer",
+    "description": "Gosta de se aventurar.",
+    "ability": "tranform-exp-into-rerolls",
+    "ability-description": "Transforma até 3 pontos de experiência em pontos de re-rolagem.",
+    "passive": "gain-one-coin-on-dice-six",
+    "passive-description": "Ganha 1 moeda a cada resultado 6 em qualquer lance de dado."
+  },
+  {
+    "code": 2,
+    "name": "Bárbaro",
+    "filename": "barbarian.png",
+    "type": "barbarian",
+    "description": "É forte. Bem forte.",
+    "ability": "extra-damage-always",
+    "ability-description": "Causa 3 pontos de dano adicionais (mesmo caso erre o teste de habilidade).",
+    "passive": "extra-two-damage-on-three-reroll",
+    "passive-description": "Causa 2 pontos de dano extra caso possua 3 ou mais pontos de re-rolagem antes do cálculo de dano."
+  },
+  {
+    "code": 3,
+    "name": "Mago",
+    "filename": "magician.png",
+    "type": "magician",
+    "description": "Possui poderes arcanos.",
+    "ability": "double-damage-done",
+    "ability-description": "Dobra o dano causado (caso erre o teste de habilidade, o uso da habilidade é reembolsada).",
+    "passive": "extra-re-roll-on-six",
+    "passive-description": "Ganha uma re-rolagem quando obter 6 num teste de habilidade (somente em combate ou em armadilhas)."
+  },
+  {
+    "code": 4,
+    "name": "Artista Marcial",
+    "filename": "martial.png",
+    "type": "martial-artist",
+    "description": "Resultado de muita disciplina.",
+    "ability": "life-restore",
+    "ability-description": "Role um dado, restaura X pontos de vidas, onde X é o resultado do dado.",
+    "passive": "bonus-by-three-rerolls",
+    "passive-description": "Adiciona 1 ponto ao resultado de teste de habilidade, quando o jogador possuir 3 ou mais Re-Rolagens."
+  }
+]

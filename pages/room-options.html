@@ -1,0 +1,48 @@
+<!-- Monster -->
+<section class="card-option-section d-none d-flex justify-content-center gap-3 mt-5 mb-3" data-type="monster">
+    <button id="btn-accept" class="btn btn-danger">Atacar</button>
+    <button id="btn-use-ability" class="btn btn-warning">Usar habilidade (1)</button>
+    <button id="btn-skip" class="btn btn-secondary">Fugir</button>
+    <button id="btn-continue" class="btn btn-success d-none">Continuar</button>
+    <button class="btn btn-outline-info btn-sm" data-bs-toggle="modal" data-bs-target="#modalBattleHelp">Ajuda</button>
+</section>
+
+<!-- Boss (sem opção de fuga) -->
+<section class="card-option-section d-none d-flex justify-content-center gap-3 mt-5 mb-3" data-type="boss">
+    <button id="btn-accept" class="btn btn-danger">Atacar</button>
+    <button id="btn-use-ability" class="btn btn-warning">Usar habilidade (1)</button>
+    <button id="btn-continue" class="btn btn-success d-none">Continuar</button>
+    <button class="btn btn-outline-info btn-sm" data-bs-toggle="modal" data-bs-target="#modalBattleHelp">Ajuda</button>
+</section>
+
+<!-- Treasure -->
+<section class="card-option-section d-none d-flex justify-content-center gap-3 mt-5 mb-3" data-type="treasure">
+    <button id="btn-collect" class="btn btn-warning">Coletar...</button>
+</section>
+
+<!-- Food -->
+<section class="card-option-section d-none d-flex flex-column align-items-center gap-2 mt-5 mb-3" data-type="food">
+    <div class="d-flex flex-wrap justify-content-center gap-2">
+        <button id="btn-food-heal"    class="btn btn-success"   data-cost="2" data-action="heal">🍖 Comida (2🪙) → +4 vida</button>
+        <button id="btn-food-weapon"  class="btn btn-primary"   data-cost="5" data-action="weapon">⚔️ Melhorar arma (5🪙) → +1 dano</button>
+        <button id="btn-food-reroll"  class="btn btn-warning"   data-cost="3" data-action="reroll">⚡ Re-Rolagem (3🪙) → +1 re-rolagem</button>
+        <button id="btn-food-skip"    class="btn btn-secondary" data-cost="0" data-action="skip">Nenhuma das opções</button>
+    </div>
+</section>
+
+<!-- Weapon -->
+<section class="card-option-section d-none d-flex justify-content-center gap-3 mt-5 mb-3" data-type="weapon">
+    <button id="btn-weapon" class="btn btn-primary">Equipar...</button>
+</section>
+
+<!-- Trap -->
+<section class="card-option-section d-none d-flex justify-content-center gap-3 mt-5 mb-3" data-type="trap">
+    <button id="btn-trap" class="btn btn-warning">Tentar desviar...</button>
+    <button id="btn-trap-avoid" class="btn btn-secondary">Evitar armadilha (<span id="trap-avoid-cost">?</span> Exp)</button>
+</section>
+
+<!-- Shrine -->
+<section class="card-option-section d-none d-flex justify-content-center gap-3 mt-5 mb-3" data-type="shrine">
+    <button id="btn-shrine" class="btn btn-info">🙏 Aceitar fé...</button>
+    <button id="btn-shrine-skip" class="btn btn-secondary">Ignorar</button>
+</section>

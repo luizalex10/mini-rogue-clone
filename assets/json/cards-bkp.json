@@ -1,0 +1,77 @@
+[
+  {
+    "code": 1,
+    "title": "Criatura 1",
+    "filename": "medieval-house.png",
+    "type": "monster",
+    "description": "Cuidado!",
+    "damage": 1
+  },
+  {
+    "code": 2,
+    "title": "Criatura 2",
+    "filename": "medieval-house.png",
+    "type": "monster",
+    "description": "Cuidado!",
+    "damage": 2
+  },
+  {
+    "code": 3,
+    "title": "Criatura 3",
+    "filename": "medieval-house.png",
+    "type": "monster",
+    "description": "Cuidado!",
+    "damage": 2
+  },
+  {
+    "code": 4,
+    "title": "Tesouro 1",
+    "filename": "money-bag.png",
+    "type": "treasure",
+    "description": "Será que há ouro?"
+  },
+  {
+    "code": 5,
+    "title": "Tesouro 2",
+    "filename": "money-bag.png",
+    "type": "treasure",
+    "description": "Será que há ouro?"
+  },
+  {
+    "code": 6,
+    "title": "Oportunidades 1",
+    "filename": "old-map.png",
+    "type": "food",
+    "description": "Aproveite, se puder."
+  },
+  {
+    "code": 7,
+    "title": "Melhoria de Arma 1",
+    "filename": "stained-glass-window.png",
+    "type": "weapon",
+    "description": "Chance de melhoria."
+  },
+  {
+    "code": 8,
+    "title": "Melhoria de Arma 2",
+    "filename": "stained-glass-window.png",
+    "type": "weapon",
+    "description": "Chance de melhoria."
+  },
+  {
+    "code": 9,
+    "title": "Armadilha 1",
+    "filename": "wall.png",
+    "type": "trap",
+    "description": "Armadilha!",
+    "exp-to-pay": 3
+  },
+  {
+    "code": 10,
+    "title": "Armadilha 2",
+    "filename": "wall.png",
+    "type": "trap",
+    "description": "Armadilha!",
+    "exp-to-pay": 4
+  }
+]

@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+        <title>Mini Rogue — Jogo</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <link rel="stylesheet" href="assets/css/room-actions.css?v=1" />
+        <link rel="stylesheet" href="assets/css/room-options.css?v=1" />
+        <link rel="stylesheet" href="assets/css/image-component.css?v=1" />
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+        <script src="assets/js/theme-toggle.js?v=1"></script>
+        <script src="assets/js/session.js?v=1"></script>
+        <script src="assets/js/player.js?v=1"></script>
+        <script src="assets/js/monster.js?v=1"></script>
+        <script src="assets/js/card-options.js?v=1"></script>
+        <script src="assets/js/card-component.js?v=1"></script>
+    </head>
+    <body class="d-flex flex-column min-vh-100">
+
+        <div id="header-placeholder"></div>
+        <div id="debug-placeholder"></div>
+        <div class="text-center py-1 border-bottom">
+            <small id="rooms-explored" class="text-muted">0 salas exploradas</small>
+        </div>
+        <section class="text-center py-2 border-bottom">
+            <button id="btn-hero-info" class="btn btn-outline-secondary btn-sm">👤 Ver Herói</button>
+        </section>
+        <div class="d-flex flex-grow-1 flex-column justify-content-center align-items-center gap-3 py-4">
+            <div id="page-content" class="d-flex flex-column flex-md-row justify-content-center align-items-stretch gap-4"></div>
+            <div id="card-options-placeholder"></div>
+        </div>
+
+        <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Validação de integridade do localStorage — reinicia se dados inválidos
+            (function validateState() {
+                try {
+                    const hero   = JSON.parse(localStorage.getItem('selected-hero'));
+                    const player = JSON.parse(localStorage.getItem('player-data'));
+                    const session = localStorage.getItem('game-session');
+
+                    const heroOk   = hero && typeof hero.code === 'number' && typeof hero.name === 'string';
+                    const playerOk = player
+                        && typeof player.currentHp === 'number'
+                        && typeof player.maxHp     === 'number'
+                        && Array.isArray(player.deck)
+                        && player.deck.length > 0;
+                    const sessionOk = session === 'active';
+
+                    if (!heroOk || !playerOk || !sessionOk) {
+                        console.warn('Estado inválido detectado — reiniciando progresso.');
+                        ['player-data', 'selected-hero', 'game-session'].forEach(k => localStorage.removeItem(k));
+                        ['monster-state', 'battle-log-state', 'room-completed', 'room-state'].forEach(k => sessionStorage.removeItem(k));
+                        window.location.href = 'index.html';
+                        return;
+                    }
+                } catch (e) {
+                    console.warn('Erro ao validar estado:', e);
+                    ['player-data', 'selected-hero', 'game-session'].forEach(k => localStorage.removeItem(k));
+                    ['monster-state', 'battle-log-state', 'room-completed', 'room-state'].forEach(k => sessionStorage.removeItem(k));
+                    window.location.href = 'index.html';
+                }
+            })();
+
+            fetch("pages/header.html")
+                .then(r => r.text())
+                .then(html => {
+                    const tmp = document.createElement("div");
+                    tmp.innerHTML = html;
+                    document.getElementById("header-placeholder")
+                        .replaceWith(tmp.querySelector("header"));
+                    const nav = tmp.querySelector("nav");
+                    if (nav) document.getElementById("debug-placeholder").replaceWith(nav);
+                    ThemeToggle.initButton();
+                    Player.initUI();
+                });
+
+            Promise.all([
+                fetch("pages/card-component.html").then(r => r.text()),
+                fetch("pages/room-actions.html").then(r => r.text()),
+                fetch("pages/room-options.html").then(r => r.text()),
+                fetch("pages/modal-dice-result.html").then(r => r.text()),
+                fetch("pages/modal-victory.html").then(r => r.text()),
+                fetch("pages/modal-game-over.html").then(r => r.text()),
+                fetch("pages/modal-escape.html").then(r => r.text()),
+                fetch("pages/modal-trap.html").then(r => r.text()),
+                fetch("pages/modal-weapon.html").then(r => r.text()),
+                fetch("pages/modal-treasure.html").then(r => r.text()),
+                fetch("pages/modal-shop-confirm.html").then(r => r.text()),
+                fetch("pages/modal-hero-info.html").then(r => r.text()),
+                fetch("pages/modal-confirm-ability.html").then(r => r.text()),
+                fetch("pages/modal-trap-avoid.html").then(r => r.text()),
+                fetch("pages/modal-battle-help.html").then(r => r.text()),
+                fetch("pages/modal-shrine.html").then(r => r.text()),
+                fetch("pages/modal-remix-choice.html").then(r => r.text())
+            ]).then(([cardHtml, actionsHtml, optionsHtml, diceHtml, victoryHtml, gameOverHtml, escapeHtml, trapHtml, weaponHtml, treasureHtml, shopHtml, heroInfoHtml, confirmAbilityHtml, trapAvoidHtml, battleHelpHtml, shrineHtml, remixChoiceHtml]) => {
+
+                const content = document.getElementById("page-content");
+                content.innerHTML = cardHtml + actionsHtml;
+
+                const optionsEl = document.getElementById("card-options-placeholder");
+                optionsEl.innerHTML = optionsHtml;
+                setTimeout(() => optionsEl.classList.add('visible'), 2000);
+
+                document.body.insertAdjacentHTML("beforeend", diceHtml);
+                document.body.insertAdjacentHTML("beforeend", victoryHtml);
+                document.body.insertAdjacentHTML("beforeend", gameOverHtml);
+                document.body.insertAdjacentHTML("beforeend", escapeHtml);
+                document.body.insertAdjacentHTML("beforeend", trapHtml);
+                document.body.insertAdjacentHTML("beforeend", weaponHtml);
+                document.body.insertAdjacentHTML("beforeend", treasureHtml);
+                document.body.insertAdjacentHTML("beforeend", shopHtml);
+                document.body.insertAdjacentHTML("beforeend", heroInfoHtml);
+                document.body.insertAdjacentHTML("beforeend", confirmAbilityHtml);
+                document.body.insertAdjacentHTML("beforeend", trapAvoidHtml);
+                document.body.insertAdjacentHTML("beforeend", battleHelpHtml);
+                document.body.insertAdjacentHTML("beforeend", shrineHtml);
+                document.body.insertAdjacentHTML("beforeend", remixChoiceHtml);
+
+                const actionsHeader = content.querySelector(".card-actions .card-header");
+                const actionsBody   = content.querySelector(".card-actions .card-body");
+                [actionsHeader, actionsBody].forEach(el => {
+                    if (el) setTimeout(() => el.classList.add('visible'), 1000);
+                });
+
+                document.getElementById('modalGameOver')
+                    .addEventListener('hidden.bs.modal', () => Player.reset());
+
+                // Popula modal do herói
+                const hero = Session.getHero();
+                if (hero) {
+                    document.getElementById('hero-info-img').src = `assets/img/heroes/${hero.filename}`;
+                    document.getElementById('hero-info-img').alt = hero.name;
+                    document.getElementById('modalHeroInfoLabel').textContent    = hero.name;
+                    document.getElementById('hero-info-name').textContent        = hero.name;
+                    document.getElementById('hero-info-min-atk').textContent     = hero['min-atk'] ?? '—';
+                    document.getElementById('hero-info-max-atk').textContent     = hero['max-atk'] ?? '—';
+                    document.getElementById('hero-info-initial-hp').textContent  = hero['initial-hp'] ?? '—';
+                    document.getElementById('hero-info-description').textContent = hero.description          || '—';
+                    document.getElementById('hero-info-passive').textContent     = hero['passive-description'] || '—';
+                    document.getElementById('hero-info-ability').textContent     = hero['ability-description'] || '—';
+                }
+
+                document.getElementById('btn-hero-info').addEventListener('click', () => {
+                    bootstrap.Modal.getOrCreateInstance(
+                        document.getElementById('modalHeroInfo')
+                    ).show();
+                });
+
+                initCardOptions();
+                CardComponent.init("#card-image");
+            });
+
+        });
+        </script>
+    </body>
+</html>

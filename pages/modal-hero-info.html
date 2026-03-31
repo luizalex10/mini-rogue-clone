@@ -1,0 +1,42 @@
+<div class="modal fade" id="modalHeroInfo" tabindex="-1"
+     aria-labelledby="modalHeroInfoLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-capitalize" id="modalHeroInfoLabel"></h5>
+            </div>
+            <div class="modal-body d-flex flex-column align-items-center gap-3 py-4" style="max-width:480px;margin:0 auto;width:100%">
+                <img id="hero-info-img" src="" alt="" width="256" height="256" class="rounded">
+                <h4 id="hero-info-name" class="text-capitalize mb-0"></h4>
+
+                <fieldset class="border rounded p-3 w-100">
+                    <legend class="float-none w-auto px-2 fs-6 fw-semibold">Ataque</legend>
+                    <p class="mb-0">⚔️ <span id="hero-info-min-atk">—</span> – <span id="hero-info-max-atk">—</span> de dano por acerto</p>
+                </fieldset>
+
+                <fieldset class="border rounded p-3 w-100">
+                    <legend class="float-none w-auto px-2 fs-6 fw-semibold">Vida inicial</legend>
+                    <p class="mb-0">❤️ <span id="hero-info-initial-hp">—</span> pontos de vida</p>
+                </fieldset>
+
+                <fieldset class="border rounded p-3 w-100">
+                    <legend class="float-none w-auto px-2 fs-6 fw-semibold">Lenda</legend>
+                    <p id="hero-info-description" class="mb-0 text-muted fst-italic"></p>
+                </fieldset>
+
+                <fieldset class="border rounded p-3 w-100">
+                    <legend class="float-none w-auto px-2 fs-6 fw-semibold">Passiva</legend>
+                    <p id="hero-info-passive" class="mb-0"></p>
+                </fieldset>
+
+                <fieldset class="border rounded p-3 w-100">
+                    <legend class="float-none w-auto px-2 fs-6 fw-semibold">Habilidade de Batalha</legend>
+                    <p id="hero-info-ability" class="mb-0"></p>
+                </fieldset>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>

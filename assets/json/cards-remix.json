@@ -1,0 +1,132 @@
+[
+  {
+    "code": 1,
+    "title": "Esqueleto",
+    "filename": "skeleton.png",
+    "type": "monster",
+    "description": "Cuidado!",
+    "damage": 1,
+    "min-hp": 3,
+    "max-hp": 4,
+    "exp-reward": 2,
+    "coin-reward": 2
+  },
+  {
+    "code": 2,
+    "title": "Morcego",
+    "filename": "bat.png",
+    "type": "monster",
+    "description": "Cuidado!",
+    "damage": 1,
+    "min-hp": 2,
+    "max-hp": 4,
+    "exp-reward": 1,
+    "coin-reward": 0
+  },
+  {
+    "code": 3,
+    "title": "Lobo",
+    "filename": "wolf.png",
+    "type": "monster",
+    "description": "Cuidado!",
+    "damage": 2,
+    "min-hp": 4,
+    "max-hp": 5,
+    "exp-reward": 3,
+    "coin-reward": 0
+  },
+  {
+    "code": 4,
+    "title": "Assombração",
+    "filename": "spirit.png",
+    "type": "monster",
+    "description": "Cuidado!",
+    "damage": 2,
+    "min-hp": 4,
+    "max-hp": 6,
+    "exp-reward": 4,
+    "coin-reward": 1
+  },
+  {
+    "code": 5,
+    "title": "Tesouro",
+    "filename": "treasure.png",
+    "type": "treasure",
+    "description": "Será que há ouro?"
+  },
+  {
+    "code": 6,
+    "title": "Tesouro",
+    "filename": "treasure.png",
+    "type": "treasure",
+    "description": "Será que há ouro?"
+  },
+  {
+    "code": 7,
+    "title": "Oportunidades",
+    "filename": "wooden-mug.png",
+    "type": "food",
+    "description": "Aproveite, se puder."
+  },
+  {
+    "code": 8,
+    "title": "Ferreiro",
+    "filename": "power-up.png",
+    "type": "weapon",
+    "description": "Chance de melhoria."
+  },
+  {
+    "code": 9,
+    "title": "Forja",
+    "filename": "anvil.png",
+    "type": "weapon",
+    "description": "Chance de melhoria."
+  },
+  {
+    "code": 10,
+    "title": "Espinhos!",
+    "filename": "trap.png",
+    "type": "trap",
+    "description": "Armadilha!",
+    "exp-to-pay": 3
+  },
+  {
+    "code": 11,
+    "title": "Armadilha!",
+    "filename": "trap-1.png",
+    "type": "trap",
+    "description": "Armadilha!",
+    "exp-to-pay": 4
+  },
+  {
+    "code": 12,
+    "title": "Templo",
+    "filename": "shrine-1.png",
+    "type": "shrine",
+    "description": "Ultima!"
+  },
+  {
+    "code": 13,
+    "title": "Esqueleto",
+    "filename": "skeleton.png",
+    "type": "monster",
+    "description": "Cuidado!",
+    "damage": 1,
+    "min-hp": 3,
+    "max-hp": 4,
+    "exp-reward": 2,
+    "coin-reward": 2
+  },
+  {
+    "code": 14,
+    "title": "Morcego",
+    "filename": "bat.png",
+    "type": "monster",
+    "description": "Cuidado!",
+    "damage": 1,
+    "min-hp": 2,
+    "max-hp": 4,
+    "exp-reward": 1,
+    "coin-reward": 0
+  }
+]

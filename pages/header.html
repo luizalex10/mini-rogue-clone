@@ -1,0 +1,28 @@
+<header class="navbar px-3 border-bottom flex-wrap gap-2 sticky-top bg-dark" data-bs-theme="dark">
+    <div class="d-flex flex-column me-auto">
+        <div class="d-flex align-items-center gap-2  text-white">
+            <span id="player-hp-text" class="fw-semibold">10 / 10</span>
+            <span id="player-hp-visual"></span>
+            <span id="player-shield"></span>
+        </div>
+        <div class="d-flex flex-wrap align-items-center gap-4 text-white">
+            <span>Exp. <span id="player-exp">0</span></span>
+            <span>🪙 <span id="player-coins">0</span></span>
+            <span>⚡ Re-rolar <span id="player-rerolls">1</span></span>
+        </div>
+    </div>
+    <div class="d-flex gap-2">
+        <button id="btn-reset-progress" class="btn btn-outline-danger btn-sm"
+                onclick="Player.reset()">
+            Reiniciar progresso
+        </button>
+        <button id="theme-toggle" class="btn btn-outline-secondary btn-sm">
+            🌗 Auto
+        </button>
+    </div>
+</header>
+<nav class="navbar bg-secondary px-3 py-1">
+    <button class="btn btn-warning btn-sm" onclick="Player.debugRefill()">
+        🛠️ Debug: Restaurar recursos
+    </button>
+</nav>

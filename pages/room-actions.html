@@ -1,0 +1,90 @@
+<div class="card shadow-sm card-actions">
+    <div class="card-header text-center">Ações</div>
+    <div class="card-body">
+
+        <section class="action-section d-none" data-type="monster">
+            <div class="d-flex align-items-center gap-3 mb-2">
+                <span id="monster-hp-text" class="fw-semibold"></span>
+                <span id="monster-hp-visual"></span>
+            </div>
+            <div class="d-flex align-items-center gap-2 mb-3">
+                <span id="monster-damage-text">1</span>
+                <span>⚔️</span>
+                <span class="text-muted small">de dano por turno</span>
+            </div>
+
+            <fieldset class="border rounded p-2 mt-2">
+                <legend class="float-none w-auto px-2 fs-6">Log</legend>
+                <div class="battle-log"></div>
+            </fieldset>
+        </section>
+
+        <!-- Boss: mesma estrutura do monster, sem fuga -->
+        <section class="action-section d-none" data-type="boss">
+            <div class="d-flex align-items-center gap-3 mb-2">
+                <span id="boss-hp-text" class="fw-semibold"></span>
+                <span id="boss-hp-visual"></span>
+            </div>
+            <div class="d-flex align-items-center gap-2 mb-3">
+                <span id="boss-damage-text">1</span>
+                <span>⚔️</span>
+                <span class="text-muted small">de dano por turno</span>
+            </div>
+
+            <fieldset class="border rounded p-2 mt-2">
+                <legend class="float-none w-auto px-2 fs-6">Log</legend>
+                <div class="battle-log"></div>
+            </fieldset>
+        </section>
+
+        <section class="action-section d-none" data-type="treasure">
+            <p class="fw-semibold mb-2">🪙 Recompensas possíveis:</p>
+            <ul class="list-unstyled mb-0">
+                <li>🎲 1 → 0 moedas</li>
+                <li>🎲 2–3 → 1 moeda</li>
+                <li>🎲 4–5 → 2 moedas</li>
+                <li>🎲 6 → 3 moedas</li>
+            </ul>
+        </section>
+
+        <section class="action-section d-none" data-type="food">
+            <p class="fw-semibold mb-2">🍖 Opções disponíveis:</p>
+            <ul class="list-unstyled mb-0">
+                <li>🍖 Comida → 2🪙 → +4 vida</li>
+                <li>⚔️ Melhorar arma → 5🪙 → +1 dano (único)</li>
+                <li>⚡ Re-Rolagem → 3🪙 → +1 re-rolagem</li>
+            </ul>
+        </section>
+
+        <section class="action-section d-none" data-type="weapon">
+            <p class="fw-semibold mb-2">⚔️ Recompensas possíveis:</p>
+            <ul class="list-unstyled mb-0">
+                <li>🎲 1 → Nada</li>
+                <li>🎲 2–3 → +1 re-rolagem</li>
+                <li>🎲 4–5 → +2 re-rolagens</li>
+                <li>🎲 6 → +3 re-rolagens e +1 experiência</li>
+            </ul>
+        </section>
+
+        <section class="action-section d-none" data-type="trap">
+            <p class="fw-semibold mb-2">🪤 Resultados possíveis:</p>
+            <ul class="list-unstyled mb-0">
+                <li>🎲 1 → 3 pontos de dano</li>
+                <li>🎲 2–4 → 2 pontos de dano</li>
+                <li>🎲 5–6 → Escapou! +1 experiência</li>
+            </ul>
+        </section>
+
+        <section class="action-section d-none" data-type="shrine">
+            <p class="fw-semibold mb-2">🙏 Resultados possíveis:</p>
+            <ul class="list-unstyled mb-0">
+                <li>🎲 1 → Sua fé é fraca. Nada acontece.</li>
+                <li>🎲 2–3 → Aceito sua fé... +3 vida e +1 re-rolagem</li>
+                <li>🎲 4–5 → Sua fé é forte! +3 vida e +2 🛡️</li>
+                <li>🎲 6 → Restaura 50% da vida perdida e +3 🛡️</li>
+            </ul>
+        </section>
+
+    </div>
+    <div class="card-footer"></div>
+</div>
